@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Threadline Apparel | Premium Sourcing & Production Architecture</title>
+    <style>
+        /* CSS RESET & BRAND VARIABLES BASED ON IMAGE_8FFDFBE9-FC76-4471-A5A4-B0505828554F.PNG */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --bg-base: #06110b; /* Deepest emerald shadow background */
+            --text-main: #f5f5f7; /* Off-white for sharp editorial reading */
+            --text-muted: #9bb0a4; /* Soft sage grey for subtitles */
+            --accent-gold: #c5a880; /* Premium brushed gold match from your logo */
+            --border: rgba(197, 168, 128, 0.12); /* Subtle gold-tinted geometric lines */
+            --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-base);
+            /* Luxury Dark Green Marble Veining Simulation */
+            background-image: 
+                linear-gradient(135deg, rgba(16, 44, 31, 0.35) 0%, rgba(6, 17, 11, 0) 50%),
+                linear-gradient(45deg, rgba(24, 61, 44, 0.2) 10%, rgba(6, 17, 11, 0) 60%),
+                radial-gradient(circle at 50% 0%, rgba(33, 77, 57, 0.25) 0%, transparent 75%);
+            background-attachment: fixed;
+            color: var(--text-main);
+            font-family: var(--font-family);
+            line-height: 1.65;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* PREMIUM NAVIGATION */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2.2rem 6%;
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            background-color: rgba(6, 17, 11, 0.85);
+            backdrop-filter: blur(16px);
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 1.15rem;
+            font-weight: 700;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--text-main);
+        }
+        
+        .logo span {
+            color: var(--accent-gold);
+        }
+
+        .nav-cta {
+            color: var(--accent-gold);
+            text-decoration: none;
+            font-size: 0.8rem;
+            letter-spacing: 0.1em;
+            border: 1px solid var(--accent-gold);
+            padding: 0.7rem 1.4rem;
+            text-transform: uppercase;
+            font-weight: 500;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .nav-cta:hover {
+            background-color: var(--accent-gold);
+            color: var(--bg-base);
+        }
+
+        /* HERO LAYOUT */
+        header {
+            min-height: 85vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 0 6%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header h1 {
+            font-size: clamp(2.6rem, 5.5vw, 4.2rem);
+            line-height: 1.15;
+            font-weight: 400;
+            letter-spacing: -0.02em;
+            margin-bottom: 2rem;
+        }
+
+        header h1 span {
+            color: var(--accent-gold);
+            font-style: italic;
+        }
+
+        header p {
+            font-size: clamp(1.1rem, 1.8vw, 1.4rem);
+            color: var(--text-muted);
+            max-width: 720px;
+            margin-bottom: 3.5rem;
+            font-weight: 300;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            background-color: var(--accent-gold);
+            color: var(--bg-base);
+            text-decoration: none;
+            padding: 1.3rem 2.8rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            width: fit-content;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            opacity: 0.95;
+            transform: translateY(-2px);
+        }
+
+        /* CORE SERVICES SECTION */
+        .services {
+            padding: 10rem 6%;
+            border-top: 1px solid var(--border);
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-label {
+            font-size: 0.75rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--accent-gold);
+            margin-bottom: 5rem;
+            display: block;
+            font-weight: 600;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 5rem;
+        }
+
+        .service-card {
+            border-top: 1px solid var(--border);
+            padding-top: 2.5rem;
+        }
+
+        .service-num {
+            font-size: 0.8rem;
+            color: var(--accent-gold);
+            display: block;
+            margin-bottom: 1.2rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+        }
+
+        .service-card h3 {
+            font-size: 1.6rem;
+            font-weight: 400;
+            margin-bottom: 1.2rem;
+            letter-spacing: -0.01em;
+        }
+
+        .service-card p {
+            color: var(--text-muted);
+            font-size: 0.98rem;
+            font-weight: 300;
+        }
+
+        /* PRODUCTION STANDARDS (VISUAL PLACEHOLDERS) */
+        .portfolio {
+            padding: 10rem 6%;
+            border-top: 1px solid var(--border);
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(45%, 1fr));
+            gap: 4rem;
+        }
+
+        .portfolio-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .image-placeholder {
+            width: 100%;
+            aspect-ratio: 4/5;
+            background-color: #0b1f14; /* Luxury deep green tone matching interior blocks */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            margin-bottom: 1.8rem;
+            border: 1px solid var(--border);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .image-placeholder::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(to bottom, transparent, rgba(6,17,11,0.4));
+        }
+
+        .portfolio-item h4 {
+            font-size: 1.3rem;
+            font-weight: 400;
+            margin-bottom: 0.6rem;
+        }
+
+        .portfolio-item p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            font-weight: 300;
+        }
+
+        /* INTAKE ARCHITECTURE */
+        .contact {
+            padding: 10rem 6% 14rem 6%;
+            border-top: 1px solid var(--border);
+            max-width: 650px;
+            margin: 0 auto;
+        }
+
+        .contact h2 {
+            font-size: 2.6rem;
+            font-weight: 400;
+            margin-bottom: 1.2rem;
+            letter-spacing: -0.02em;
+            text-align: center;
+        }
+
+        .contact-subtitle {
+            color: var(--text-muted);
+            text-align: center;
+            margin-bottom: 4.5rem;
+            font-weight: 300;
+            font-size: 0.98rem;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+        }
+
+        label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--accent-gold);
+            font-weight: 500;
+        }
+
+        input, select, textarea {
+            background-color: transparent;
+            border: none;
+            border-bottom: 1px solid var(--border);
+            padding: 1rem 0;
+            color: var(--text-main);
+            font-family: var(--font-family);
+            font-size: 1rem;
+            transition: border-color 0.4s ease;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: var(--accent-gold);
+        }
+
+        select option {
+            background-color: #06110b;
+            color: var(--text-main);
+        }
+
+        .btn-submit {
+            background-color: var(--accent-gold);
+            color: var(--bg-base);
+            border: none;
+            padding: 1.3rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            cursor: pointer;
+            margin-top: 2rem;
+            transition: opacity 0.3s ease;
+        }
+
+        .btn-submit:hover {
+            opacity: 0.9;
+        }
+
+        footer {
+            padding: 5rem 6%;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--text-muted);
+            opacity: 0.5;
+            font-size: 0.75rem;
+            letter-spacing: 0.08em;
+        }
+
+        @media (max-width: 768px) {
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+                gap: 5rem;
+            }
+            header {
+                min-height: 75vh;
+            }
+            nav {
+                padding: 1.5rem 6%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- STICKY TOP BRAND BAR -->
+    <nav>
+        <div class="logo">Threadline <span>Apparel</span></div>
+        <a href="#intake" class="nav-cta">Begin Production</a>
+    </nav>
+
+    <!-- IMMERSIVE STATEMENT SECTION -->
+    <header>
+        <h1>Premium Apparel Sourcing &amp; <span>Production Architecture</span>.</h1>
+        <p>Connecting London’s contemporary fashion houses with sustainable, high-precision textile mills and manufacturing complexes in Southern India.</p>
+        <a href="#intake" class="btn-primary">Schedule Sourcing Consultation</a>
+    </header>
+
+    <!-- CORPORATE CAPABILITIES -->
+    <section class="services">
+        <span class="section-label">Global Operations Network</span>
+        <div class="services-grid">
+            
+            <div class="service-card">
+                <span class="service-num">01 / TEXTILE SPECIFICATION</span>
+                <h3>Fabric Sourcing &amp; Milling</h3>
+                <p>Direct supply line integration with certified spinning hubs. Engineering premium heavyweight combed cottons, complex density loopback jerseys (400GSM+), and custom engineered ribbing structures calibrated for modern streetwear drapes.</p>
+            </div>
+
+            <div class="service-card">
+                <span class="service-num">02 / TECHNICAL DEVELOPMENT</span>
+                <h3>Tech-Pack &amp; Rapid Sampling</h3>
+                <p>Translating initial creative flats into production-ready specifications. Our technical teams manage structural grading, panel allowances, and accelerated physical sample assembly to confirm execution before cutting bulk yardage.</p>
+            </div>
+
+            <div class="service-card">
+                <span class="service-num">03 / LOGISTICAL OVERSIGHT</span>
+                <h3>Supply Chain Integrity &amp; QC</h3>
+                <p>Rigorous, independent quality controllers stationed live on partner assembly floors in Tirupur. From checking yarn moisture levels to inspecting end-line packing, we eliminate risk to ensure seamless custom arrivals.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- PRODUCTION VISUAL OVERVIEW -->
+    <section class="portfolio">
+        <span class="section-label">Production Archetypes</span>
+        <div class="portfolio-grid">
+            
+            <div class="portfolio-item">
+                <div class="image-placeholder">[ Premium Knitwear Execution ]</div>
+                <h4>Luxury Heavyweight Textiles</h4>
+                <p>Engineered for high structural stability, customized Pantone reactive batch-dyeing, and specialized pre-shrunk processing treatments designed for international fashion standards.</p>
+            </div>
+
+            <div class="portfolio-item">
+                <div class="image-placeholder">[ Floor Control &amp; Compliance ]</div>
+                <h4>Ethical Manufacturing Footprint</h4>
+                <p>Every facility throughout our logistics chain holds verified credentials for safe employment practices, structural air purity, and advanced closed-loop wastewater purification systems.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CLIENT ONBOARDING INTERFACE WITH LIVE BACKEND -->
+    <section class="contact" id="intake">
+        <h2>Begin Production</h2>
+        <p class="contact-subtitle">Provide your collection parameters below. An oversight director will analyze your technical requirements and reply within 24 hours.</p>
+        
+        <!-- SECURE FORM ACTION ROUTING VIA WEB3FORMS -->
+        <form action="https://api.web3forms.com/submit" method="POST">
+            
+            <!-- FORM BACKEND CONFIGURATION KEY -->
+            <input type="hidden" name="access_key" value="39f883e7-9723-4dc7-b299-f339d08ead15">
+            <input type="hidden" name="subject" value="New Sourcing Brief - Threadline Apparel">
+            <input type="checkbox" name="botcheck" id="" style="display: none;">
+
+            <div class="form-group">
+                <label for="brand-name">Brand / Corporate Name</label>
+                <input type="text" name="Brand Name" id="brand-name" required placeholder="e.g., Threadline Apparel LTD">
+            </div>
+
+            <div class="form-group">
+                <label for="email">Corporate Communications Email</label>
+                <input type="email" name="Email" id="email" required placeholder="name@yourdomain.co.uk">
+            </div>
+
+            <div class="form-group">
+                <label for="moq">Planned Deployment Volume (MOQ)</label>
+                <select name="Target MOQ Range" id="moq" required>
+                    <option value="" disabled selected>Select production scope...</option>
+                    <option value="100-300">100 — 300 units per line item</option>
+                    <option value="300-500">300 — 500 units per line item</option>
+                    <option value="500+">500+ premium container capacity</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="notes">Technical Silhouette &amp; Milling Requirements</label>
+                <textarea name="Production Notes" id="notes" rows="4" placeholder="Detail raw fabric expectations, custom weight profiles, or ongoing production constraints..."></textarea>
+            </div>
+
+            <button type="submit" class="btn-submit">Submit Production Brief</button>
+        </form>
+    </section>
+
+    <!-- FORMAL LEGAL FOOTER -->
+    <footer>
+        &copy; 2026 Threadline Apparel. Supply chain data verified. London Management / Tirupur Operations.
+    </footer>
+
+</body>
+</html>
